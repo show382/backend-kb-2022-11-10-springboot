@@ -1,5 +1,6 @@
 package com.seungju.border.controller;
 
+import org.apache.catalina.connector.Response;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.seungju.border.dto.HelloDto;
+import com.seungju.border.dto.response.ResponseDto;
 
 //Response로 HTML을 반환하는 Controller 가 아닌
 //Response Body에 직접 데이터를 담아서 응답하는 Controller
@@ -49,9 +51,11 @@ public class Main {
 	
 	// @PostMapping(end-point) : 해당 end-point로 Post 방식의 Request가 왔을 때 동작
 	@PostMapping(HELLO)
+	
 	// @RequestBody : 해당 Request의 Body에서 JSON을 인식해 인스턴스로 변경
-	public HelloDto postHello(@RequestBody HelloDto requestBody) {
-		return requestBody;
+	
+	public ResponseDto<HelloDto> postHello(@RequestBody HelloDto requestBody) {
+		return ResponseDto.setSuccess("HELLO", requestBody);
 	}
 	
 	// @PutMapping(end-point) : 해당 end-point로 Put 방식의 Request가 왔을 때 동작
