@@ -18,6 +18,6 @@ public interface MemberRepository extends JpaRepository<MemberEntity, String> {
 	// @Query :커스텀 ORM 메서드를 작성
 	// 테이블 명을 alias로 지정해서 사용
 	// ?1,?2,... : 매개변수로 받아온 변수를 해당 위치로 넣기 위한 구문
-	@Query("SELECT * FROM MEMBER m where m.email = ?1")
-	public List<MemberEntity> myFindAll(String email);
+	@Query("select m from MEMBER m WHERE m.email = ?1")
+	List<MemberEntity> myFindAll(String email);
 }

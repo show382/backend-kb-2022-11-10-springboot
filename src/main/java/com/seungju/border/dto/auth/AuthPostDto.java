@@ -1,7 +1,7 @@
 package com.seungju.border.dto.auth;
 
 import javax.validation.constraints.Email;
-import org.antlr.v4.runtime.misc.NotNull;
+import javax.validation.constraints.NotNull;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

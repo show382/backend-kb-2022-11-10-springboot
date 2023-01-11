@@ -2,7 +2,7 @@ package com.seungju.border.dto.user;
 
 import javax.validation.constraints.NotNull;
 
-import io.micrometer.common.lang.NonNull;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,22 +13,16 @@ import lombok.NoArgsConstructor;
 public class PostUserDto {
 	@NotNull
 	private String email;
-	@NotNull
-	
+	@NotNull	
 	private String password;
-	@NotNull
-	
+	@NotNull	
 	private String password2;
-	@NotNull
-	
+	@NotNull	
 	private String nickname;
-	@NotNull
-	
+	@NotNull	
 	private String telNumber;
+	@NotNull	
+	private String address;
 	@NotNull
-	
-	private String adress;
-	@NotNull
-	
 	private String adressDetail;
 }
